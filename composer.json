@@ -6,6 +6,7 @@
             "email": "736400469@qq.com"
         }
     ],
+    "license": "MIT",
     "require": {
         "php":">=7.0",
         "elasticsearch/elasticsearch": "~6.0"
