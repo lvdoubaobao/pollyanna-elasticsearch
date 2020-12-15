@@ -1,9 +1,6 @@
 # Pollyanna Elasticsearch
 
 
-[![Latest Stable Version](https://poser.pugx.org/crcms/elasticsearch/v/stable)](https://packagist.org/packages/crcms/elasticsearch)
-[![License](https://poser.pugx.org/crcms/elasticsearch/license)](https://packagist.org/packages/crcms/elasticsearch)
-[![StyleCI](https://github.styleci.io/repos/100927763/shield?branch=master)](https://github.styleci.io/repos/100927763)
 
 
 ## Install
@@ -188,6 +185,9 @@ public function whereNotExists($field, $boolean = 'and'): self
 ```php
 public function orWhereBetween($field, array $values): self
 ```
+```php
+public function whereGeo($field,$distance,$lat,$lng,$boolean='and'):self
+```
 
 ```php
 public function orderBy(string $field, $sort): self
@@ -245,6 +245,7 @@ public function delete($id)
 ```php
 public function count(): int
 ```
+
 
 ### Log
 
