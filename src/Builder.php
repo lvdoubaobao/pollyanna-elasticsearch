@@ -254,6 +254,17 @@ class Builder
 
     /**
      * @param $field
+     * @param $distance
+     * @param string $boolean
+     * @return Builder
+     */
+    public function whereGeo($field,$distance,$lat,$lng,$boolean='and'):self
+    {
+        $value=compact('distance','lat','lng');
+        return $this->where($field,'=',$value,'geo_distance',$boolean);
+    }
+    /**
+     * @param $field
      * @param array $value
      * @return Builder
      */

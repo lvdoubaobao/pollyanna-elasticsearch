@@ -211,9 +211,15 @@ class Grammar
      */
     protected function whereLeaf(string $leaf, string $column, string $operator = null, $value): array
     {
+
         if (in_array($leaf, ['term', 'match'], true)) {
             return [$leaf => [$column => $value]];
-        } elseif ($leaf === 'range') {
+        } elseif($leaf ==='geo_distance'){
+            return [$leaf=>[
+                'distance'=>$value['distance'].'km',
+                $column=>$value['lat'].','.$value['lng']
+            ]];
+        }elseif ($leaf === 'range') {
             return [$leaf => [
                 $column => is_array($value) ? $value : [$operator => $value]
             ]];
